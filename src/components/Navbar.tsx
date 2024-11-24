@@ -57,7 +57,7 @@ const Navbar: React.FC<NavbarProps> = () => {
   const { isConnected } = useAccount();
   const [logoState, setLogoState] = useState({
     src: "/logo123.webp",
-    text: "BlackJack"
+    text: "Boilerplate"
   });
 
   const changeLogo = () => {
