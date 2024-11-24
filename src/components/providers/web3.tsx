@@ -15,7 +15,7 @@ import {
   trustWallet,
   ledgerWallet,
 } from "@rainbow-me/rainbowkit/wallets";
-import { avalanche, avalancheFuji } from "wagmi/chains";
+import { avalanche, avalancheFuji, polygon, polygonAmoy } from "wagmi/chains";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
   createStorage,
@@ -76,7 +76,7 @@ export function Web3Provider({ children }: { children: React.ReactNode }) {
           wallets: [argentWallet, trustWallet, ledgerWallet],
         },
       ],
-      chains: [avalanche, avalancheFuji],
+      chains: [avalanche, avalancheFuji, polygon, polygonAmoy],
       storage,
     });
 

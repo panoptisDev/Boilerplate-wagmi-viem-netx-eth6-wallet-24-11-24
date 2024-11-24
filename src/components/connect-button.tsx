@@ -13,6 +13,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import Image from "next/image";
 
 export const ConnectButton = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,8 +29,6 @@ export const ConnectButton = () => {
         authenticationStatus,
         mounted,
       }) => {
-        // Note: If your app doesn't use authentication, you
-        // can remove all 'authenticationStatus' checks
         const ready = mounted && authenticationStatus !== "loading";
         const connected =
           ready &&
@@ -85,10 +84,11 @@ export const ConnectButton = () => {
                         }}
                       >
                         {chain.iconUrl && (
-                          <img
+                          <Image
                             alt={chain.name ?? "Chain icon"}
                             src={chain.iconUrl}
-                            style={{ width: 12, height: 12 }}
+                            width={12}
+                            height={12}
                           />
                         )}
                       </div>
@@ -116,11 +116,6 @@ export const ConnectButton = () => {
                           </div>
                           <span>{account.displayName}</span>
                         </div>
-                        {/* <ChevronDown
-                          className={`ml-2 h-4 w-4 transition-transform ${
-                            isOpen ? "rotate-180" : ""
-                          }`}
-                        /> */}
                       </Button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="end" className="w-56">

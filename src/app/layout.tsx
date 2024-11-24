@@ -7,6 +7,8 @@ import "@rainbow-me/rainbowkit/styles.css";
 import { siteConfig } from "@/lib/site";
 import { ThemeProvider } from "next-themes";
 import { Web3Provider } from "@/components/providers/web3";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -71,7 +73,11 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <Web3Provider>{children}</Web3Provider>
+          <Web3Provider>
+            <Navbar />
+            {children}
+            <Footer />
+          </Web3Provider>
         </ThemeProvider>
       </body>
     </html>
